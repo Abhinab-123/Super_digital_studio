@@ -27,19 +27,19 @@ const Footer = () => {
     {
       icon: Instagram,
       label: 'Instagram',
-      href: 'https://instagram.com/superdigital',
+      href: 'https://www.instagram.com/superdigitalstudioctc?utm_source=qr&igsh=MTBkdzZqN3d5ZnRlNg%3D%3D',
       color: 'hover:text-pink-500'
     },
     {
       icon: Facebook,
       label: 'Facebook', 
-      href: 'https://facebook.com/superdigital',
+      href: 'https://www.facebook.com/share/1A5nF9Ysua/',
       color: 'hover:text-blue-500'
     },
     {
       icon: Youtube,
       label: 'YouTube',
-      href: 'https://youtube.com/superdigital',
+      href: 'https://youtube.com/@superdigitalstudio9332?feature=shared',
       color: 'hover:text-red-500'
     }
   ];

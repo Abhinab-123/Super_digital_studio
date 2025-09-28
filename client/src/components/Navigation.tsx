@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { SiInstagram, SiYoutube, SiFacebook } from 'react-icons/si';
 import logoImage from '@assets/SD LOGO PSD    ___JPG_1759046741867.jpg';
 
 interface NavigationProps {
@@ -34,6 +35,27 @@ const Navigation = ({ activeSection = 'home' }: NavigationProps) => {
     console.log(`Scrolling to ${sectionId} section`);
     setIsMobileMenuOpen(false);
   };
+
+  const socialLinks = [
+    {
+      icon: SiInstagram,
+      href: 'https://www.instagram.com/superdigitalstudioctc?utm_source=qr&igsh=MTBkdzZqN3d5ZnRlNg%3D%3D',
+      label: 'Instagram',
+      color: 'hover:text-pink-500'
+    },
+    {
+      icon: SiYoutube,
+      href: 'https://youtube.com/@superdigitalstudio9332?feature=shared',
+      label: 'YouTube',
+      color: 'hover:text-red-500'
+    },
+    {
+      icon: SiFacebook,
+      href: 'https://www.facebook.com/share/1A5nF9Ysua/',
+      label: 'Facebook',
+      color: 'hover:text-blue-500'
+    }
+  ];
 
   return (
     <motion.header
@@ -88,8 +110,25 @@ const Navigation = ({ activeSection = 'home' }: NavigationProps) => {
             ))}
           </nav>
 
-          {/* Book Now Button */}
-          <div className="hidden lg:block">
+          {/* Social Media Icons & Book Now Button */}
+          <div className="hidden lg:flex items-center space-x-4">
+            {/* Social Media Icons */}
+            <div className="flex items-center space-x-2 pr-4 border-r border-border">
+              {socialLinks.map((social, index) => (
+                <Button
+                  key={index}
+                  variant="ghost"
+                  size="icon"
+                  className={`h-8 w-8 text-muted-foreground ${social.color} transition-colors`}
+                  onClick={() => window.open(social.href, '_blank')}
+                  data-testid={`nav-social-${social.label.toLowerCase()}`}
+                >
+                  <social.icon className="h-4 w-4" />
+                </Button>
+              ))}
+            </div>
+            
+            {/* Book Now Button */}
             <Button 
               variant="default"
               onClick={() => window.open('https://wa.me/919861094038', '_blank')}
@@ -136,6 +175,23 @@ const Navigation = ({ activeSection = 'home' }: NavigationProps) => {
                   {item.label}
                 </button>
               ))}
+              
+              {/* Mobile Social Media Icons */}
+              <div className="flex items-center justify-center space-x-4 pt-4 border-t border-border">
+                {socialLinks.map((social, index) => (
+                  <Button
+                    key={index}
+                    variant="ghost"
+                    size="icon"
+                    className={`text-muted-foreground ${social.color} transition-colors`}
+                    onClick={() => window.open(social.href, '_blank')}
+                    data-testid={`mobile-social-${social.label.toLowerCase()}`}
+                  >
+                    <social.icon className="h-5 w-5" />
+                  </Button>
+                ))}
+              </div>
+              
               <Button 
                 variant="default"
                 className="w-full mt-4 font-sans"
