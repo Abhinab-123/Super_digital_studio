@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Heart, Camera, Award, Users } from 'lucide-react';
-import editorialImage from '@assets/generated_images/Editorial_fashion_shoot_80e14fc8.png';
+import editorialImage from '@assets/Screenshot 2025-09-28 132446_1759048713787.png';
 
 const About = () => {
   const stats = [
