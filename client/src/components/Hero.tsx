@@ -20,7 +20,7 @@ const Hero = () => {
         <img 
           src={heroImage}
           alt="Luxury Wedding Photography"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover blur-[1px]"
           data-testid="hero-background-image"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/60" />

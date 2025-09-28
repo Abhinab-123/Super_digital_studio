@@ -18,7 +18,6 @@ interface GalleryImage {
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   const galleryImages: GalleryImage[] = [
     {
@@ -58,16 +57,8 @@ const Gallery = () => {
     }
   ];
 
-  const categories = [
-    { id: 'all', label: 'All Work' },
-    { id: 'wedding', label: 'Weddings' },
-    { id: 'editorial', label: 'Editorial' },
-    { id: 'portrait', label: 'Portraits' }
-  ];
 
-  const filteredImages = selectedCategory === 'all' 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === selectedCategory);
+  const filteredImages = galleryImages;
 
   const openLightbox = (image: GalleryImage) => {
     setSelectedImage(image);
@@ -118,28 +109,6 @@ const Gallery = () => {
           </p>
         </motion.div>
 
-        {/* Category Filter */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="flex justify-center mb-12"
-        >
-          <div className="flex flex-wrap items-center gap-4 p-2 bg-card border border-card-border rounded-lg">
-            {categories.map((category) => (
-              <Button
-                key={category.id}
-                variant={selectedCategory === category.id ? 'default' : 'ghost'}
-                onClick={() => setSelectedCategory(category.id)}
-                className="font-sans"
-                data-testid={`filter-${category.id}`}
-              >
-                {category.label}
-              </Button>
-            ))}
-          </div>
-        </motion.div>
 
         {/* Gallery Grid */}
         <motion.div 
