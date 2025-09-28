@@ -2,9 +2,6 @@ import { motion } from 'framer-motion';
 import { Instagram, Linkedin, Mail } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import creativeDirectorImage from '@assets/generated_images/Creative_director_headshot_fbb5fa81.png';
-import photographerImage from '@assets/generated_images/Photographer_headshot_de97b6e4.png';
-import stylistImage from '@assets/generated_images/Stylist_headshot_07364acc.png';
 
 interface TeamMember {
   name: string;
@@ -22,39 +19,39 @@ interface TeamMember {
 const Team = () => {
   const teamMembers: TeamMember[] = [
     {
-      name: 'Priya Sharma',
-      role: 'Creative Director & Founder',
-      bio: 'With over 8 years of experience in luxury wedding photography, Priya brings an artistic vision that transforms moments into timeless memories.',
-      image: creativeDirectorImage,
-      specialties: ['Wedding Photography', 'Creative Direction', 'Brand Strategy'],
+      name: '[Your Name]',
+      role: '[Your Role]',
+      bio: '[Your bio and experience description goes here]',
+      image: '/placeholder-team-1.jpg',
+      specialties: ['[Specialty 1]', '[Specialty 2]', '[Specialty 3]'],
       socials: {
         instagram: '#',
         linkedin: '#',
-        email: 'priya@superdigital.com'
+        email: 'your-email@superdigital.com'
       }
     },
     {
-      name: 'Arjun Gupta',
-      role: 'Lead Photographer',
-      bio: 'A master of capturing emotions and candid moments, Arjun specializes in editorial and documentary-style wedding photography.',
-      image: photographerImage,
-      specialties: ['Editorial Photography', 'Candid Shots', 'Portrait Photography'],
+      name: '[Team Member Name]',
+      role: '[Team Member Role]',
+      bio: '[Team member bio and experience description goes here]',
+      image: '/placeholder-team-2.jpg',
+      specialties: ['[Specialty 1]', '[Specialty 2]', '[Specialty 3]'],
       socials: {
         instagram: '#',
         linkedin: '#',
-        email: 'arjun@superdigital.com'
+        email: 'team-member@superdigital.com'
       }
     },
     {
-      name: 'Kavya Patel',
-      role: 'Lead Stylist & Art Director',
-      bio: 'Kavya brings fashion-forward styling and artistic direction to every shoot, ensuring each couple looks and feels absolutely stunning.',
-      image: stylistImage,
-      specialties: ['Bridal Styling', 'Art Direction', 'Fashion Coordination'],
+      name: '[Team Member Name]',
+      role: '[Team Member Role]',
+      bio: '[Team member bio and experience description goes here]',
+      image: '/placeholder-team-3.jpg',
+      specialties: ['[Specialty 1]', '[Specialty 2]', '[Specialty 3]'],
       socials: {
         instagram: '#',
         linkedin: '#',
-        email: 'kavya@superdigital.com'
+        email: 'team-member@superdigital.com'
       }
     }
   ];
