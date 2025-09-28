@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import galleryGrid from '@assets/generated_images/Wedding_gallery_photos_3b74b24d.png';
-import heroImage from '@assets/generated_images/Luxury_wedding_hero_image_8e770950.png';
-import editorialImage from '@assets/generated_images/Editorial_fashion_shoot_80e14fc8.png';
+import brideImage from '@assets/Screenshot 2025-09-28 132248_1759047351185.png';
+import specialMomentsImage from '@assets/Screenshot 2025-09-28 132324_1759047351191.png';
+import loveCollageImage from '@assets/Screenshot 2025-09-28 132406_1759047351192.png';
+import engagementImage from '@assets/Screenshot 2025-09-28 132429_1759047351193.png';
+import bridalPortraitImage from '@assets/Screenshot 2025-09-28 132446_1759047351194.png';
 
 interface GalleryImage {
   id: number;
@@ -18,63 +20,41 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
-  // TODO: Replace with real gallery images
   const galleryImages: GalleryImage[] = [
     {
       id: 1,
-      src: heroImage,
-      alt: 'Luxury Wedding Ceremony',
+      src: brideImage,
+      alt: 'The Bride - Traditional Indian Wedding Photography',
       category: 'wedding',
-      title: 'Elegant Garden Wedding'
+      title: 'The Bride'
     },
     {
       id: 2,
-      src: editorialImage,
-      alt: 'Editorial Fashion Shoot',
-      category: 'editorial',
-      title: 'High Fashion Editorial'
+      src: specialMomentsImage,
+      alt: 'Special Moments - Couple Photography',
+      category: 'wedding',
+      title: 'Special Moments'
     },
     {
       id: 3,
-      src: galleryGrid,
-      alt: 'Wedding Gallery Showcase',
+      src: loveCollageImage,
+      alt: 'I Love You - Wedding Photo Collage',
       category: 'wedding',
-      title: 'Wedding Collection'
+      title: 'I Love You'
     },
     {
       id: 4,
-      src: heroImage,
-      alt: 'Romantic Couple Portrait',
-      category: 'portrait',
-      title: 'Intimate Moments'
+      src: engagementImage,
+      alt: 'Engagement Wishes - Ring Photography',
+      category: 'wedding',
+      title: 'Engagement Wishes'
     },
     {
       id: 5,
-      src: editorialImage,
-      alt: 'Bridal Editorial',
-      category: 'editorial',
-      title: 'Bridal Elegance'
-    },
-    {
-      id: 6,
-      src: galleryGrid,
-      alt: 'Wedding Details',
-      category: 'wedding',
-      title: 'Luxury Details'
-    },
-    {
-      id: 7,
-      src: heroImage,
-      alt: 'Pre-wedding Shoot',
+      src: bridalPortraitImage,
+      alt: 'Bridal Portrait with Dramatic Lighting',
       category: 'portrait',
-      title: 'Love Story Session'
-    },
-    {
-      id: 8,
-      src: editorialImage,
-      alt: 'Fashion Portrait',
-      category: 'editorial',
-      title: 'Artistic Vision'
+      title: 'Bridal Elegance'
     }
   ];
 
