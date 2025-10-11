@@ -3,7 +3,7 @@ import { Instagram, Linkedin, Mail } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import pradeepImage from '@assets/Proprietor___1760172148551.png';
-import dilliImage from '@assets/IMG_20250517_201115_1760172152511.jpg';
+import dilliImage from '@assets/IMG_20250517_201115_1760195582123.jpg';
 import balaramImage from '@assets/IMG_20250831_185841_1760172159569.jpg';
 import sujitImage from '@assets/WhatsApp Image 2025-10-11 at 13.38.30_c7e988f6_1760172163097.jpg';
 
