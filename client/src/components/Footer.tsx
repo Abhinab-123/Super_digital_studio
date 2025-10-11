@@ -161,11 +161,11 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <Mail className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <a 
-                  href="mailto:hello@superdigital.com"
+                  href="mailto:superdigitalctc@gmail.com"
                   className="text-background/80 text-sm hover:text-background transition-colors"
                   data-testid="footer-email-link"
                 >
-                  hello@superdigital.com
+                  superdigitalctc@gmail.com
                 </a>
               </div>
               <div className="flex items-start space-x-3">

@@ -14,8 +14,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      content: 'hello@superdigital.com',
-      action: () => window.open('mailto:hello@superdigital.com', '_blank')
+      content: 'superdigitalctc@gmail.com',
+      action: () => window.open('mailto:superdigitalctc@gmail.com', '_blank')
     },
     {
       icon: MapPin,
