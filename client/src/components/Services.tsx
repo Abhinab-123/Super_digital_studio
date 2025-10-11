@@ -119,14 +119,8 @@ const Services = () => {
                     ))}
                   </ul>
 
-                  {/* Pricing and CTA */}
+                  {/* CTA */}
                   <div className="border-t border-border pt-6 mt-auto">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-sm text-muted-foreground">Starting from</span>
-                      <span className="font-serif text-xl font-medium text-primary">
-                        {service.startingPrice}
-                      </span>
-                    </div>
                     <Button 
                       variant="outline"
                       className="w-full"

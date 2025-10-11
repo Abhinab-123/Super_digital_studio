@@ -2,6 +2,13 @@ import { motion } from 'framer-motion';
 import { Instagram, Linkedin, Mail } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 interface TeamMember {
   name: string;
@@ -19,39 +26,51 @@ interface TeamMember {
 const Team = () => {
   const teamMembers: TeamMember[] = [
     {
-      name: '[Your Name]',
-      role: '[Your Role]',
-      bio: '[Your bio and experience description goes here]',
-      image: '/placeholder-team-1.jpg',
-      specialties: ['[Specialty 1]', '[Specialty 2]', '[Specialty 3]'],
+      name: 'Pradeep Kumar Sukla',
+      role: 'Proprietor',
+      bio: 'Leading Super Digital with vision and dedication to capture your most precious moments.',
+      image: '/attached_assets/Proprietor___1760170528278.png',
+      specialties: ['Leadership', 'Creative Vision', 'Client Relations'],
       socials: {
         instagram: '#',
         linkedin: '#',
-        email: 'your-email@superdigital.com'
+        email: 'pradeep@superdigital.com'
       }
     },
     {
-      name: '[Team Member Name]',
-      role: '[Team Member Role]',
-      bio: '[Team member bio and experience description goes here]',
-      image: '/placeholder-team-2.jpg',
-      specialties: ['[Specialty 1]', '[Specialty 2]', '[Specialty 3]'],
+      name: 'Dilli Kumar Jena',
+      role: 'Managing Director',
+      bio: 'Managing operations and ensuring excellence in every project we deliver.',
+      image: '/attached_assets/IMG_20250517_201115_1760170819772.jpg',
+      specialties: ['Operations', 'Management', 'Quality Control'],
       socials: {
         instagram: '#',
         linkedin: '#',
-        email: 'team-member@superdigital.com'
+        email: 'dilli@superdigital.com'
       }
     },
     {
-      name: '[Team Member Name]',
-      role: '[Team Member Role]',
-      bio: '[Team member bio and experience description goes here]',
-      image: '/placeholder-team-3.jpg',
-      specialties: ['[Specialty 1]', '[Specialty 2]', '[Specialty 3]'],
+      name: 'Balaram Mandal',
+      role: 'Cinematographer',
+      bio: 'Crafting cinematic stories that bring your special moments to life.',
+      image: '/attached_assets/WhatsApp Image 2025-10-11 at 13.38.30_c7e988f6_1760170840669.jpg',
+      specialties: ['Cinematography', 'Video Editing', 'Storytelling'],
       socials: {
         instagram: '#',
         linkedin: '#',
-        email: 'team-member@superdigital.com'
+        email: 'balaram@superdigital.com'
+      }
+    },
+    {
+      name: 'Sujit Kumar Sahoo',
+      role: 'Photographer',
+      bio: 'Capturing timeless moments with artistic precision and creative excellence.',
+      image: '/attached_assets/IMG_20250831_185841_1760170836441.jpg',
+      specialties: ['Photography', 'Portrait Photography', 'Wedding Photography'],
+      socials: {
+        instagram: '#',
+        linkedin: '#',
+        email: 'sujit@superdigital.com'
       }
     }
   ];
@@ -85,8 +104,108 @@ const Team = () => {
           </p>
         </motion.div>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Mobile Carousel */}
+        <div className="md:hidden">
+          <Carousel className="w-full max-w-xs mx-auto">
+            <CarouselContent>
+              {teamMembers.map((member, index) => (
+                <CarouselItem key={index}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                    data-testid={`team-member-${index}`}
+                  >
+                    <Card className="overflow-hidden group hover-elevate border-card-border bg-background">
+                      <div className="relative overflow-hidden">
+                        <img 
+                          src={member.image}
+                          alt={`${member.name} - ${member.role}`}
+                          className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700"
+                          data-testid={`team-image-${index}`}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        
+                        {/* Social Links Overlay */}
+                        <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="flex items-center justify-center space-x-3">
+                            {member.socials.instagram && (
+                              <Button 
+                                size="icon" 
+                                variant="secondary"
+                                className="bg-white/20 backdrop-blur-sm border-white/30 hover:bg-white/30"
+                                onClick={() => window.open(member.socials.instagram, '_blank')}
+                                data-testid={`button-instagram-${index}`}
+                              >
+                                <Instagram className="h-4 w-4 text-white" />
+                              </Button>
+                            )}
+                            {member.socials.linkedin && (
+                              <Button 
+                                size="icon" 
+                                variant="secondary"
+                                className="bg-white/20 backdrop-blur-sm border-white/30 hover:bg-white/30"
+                                onClick={() => window.open(member.socials.linkedin, '_blank')}
+                                data-testid={`button-linkedin-${index}`}
+                              >
+                                <Linkedin className="h-4 w-4 text-white" />
+                              </Button>
+                            )}
+                            {member.socials.email && (
+                              <Button 
+                                size="icon" 
+                                variant="secondary"
+                                className="bg-white/20 backdrop-blur-sm border-white/30 hover:bg-white/30"
+                                onClick={() => handleContactTeamMember(member.name, member.socials.email!)}
+                                data-testid={`button-email-${index}`}
+                              >
+                                <Mail className="h-4 w-4 text-white" />
+                              </Button>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+
+                      <CardContent className="p-6">
+                        <h3 className="font-serif text-xl font-medium text-foreground mb-1">
+                          {member.name}
+                        </h3>
+                        <p className="text-primary font-medium mb-3">
+                          {member.role}
+                        </p>
+                        <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                          {member.bio}
+                        </p>
+
+                        {/* Specialties */}
+                        <div className="space-y-2">
+                          <h4 className="text-sm font-medium text-foreground">Specialties:</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {member.specialties.map((specialty, specialtyIndex) => (
+                              <span 
+                                key={specialtyIndex}
+                                className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium"
+                                data-testid={`specialty-${index}-${specialtyIndex}`}
+                              >
+                                {specialty}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+
+        {/* Desktop Grid */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
@@ -177,32 +296,6 @@ const Team = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Team CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <div className="bg-background border border-border rounded-lg p-8 lg:p-12">
-            <h3 className="font-serif text-3xl font-light text-foreground mb-4">
-              Want to Work with Our Team?
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Our talented team is ready to bring your vision to life. Get in touch to discuss 
-              your project and see how we can create something extraordinary together.
-            </p>
-            <Button 
-              size="lg"
-              onClick={() => window.open('https://wa.me/919861094038?text=Hello! I would like to work with your team for my upcoming project.', '_blank')}
-              data-testid="button-contact-team"
-            >
-              Contact Our Team
-            </Button>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

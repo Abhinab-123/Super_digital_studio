@@ -9,8 +9,10 @@ const Hero = () => {
   };
 
   const handleViewPortfolio = () => {
-    console.log('Scrolling to gallery section');
-    // TODO: Implement smooth scroll to gallery section
+    const gallerySection = document.getElementById('gallery');
+    if (gallerySection) {
+      gallerySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   return (

@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import brideImage from '@assets/Screenshot 2025-09-28 132248_1759047351185.png';
-import specialMomentsImage from '@assets/Screenshot 2025-09-28 132324_1759047351191.png';
-import loveCollageImage from '@assets/Screenshot 2025-09-28 132406_1759047351192.png';
-import engagementImage from '@assets/Screenshot 2025-09-28 132429_1759047351193.png';
-import bridalPortraitImage from '@assets/Screenshot 2025-09-28 132446_1759047351194.png';
+import galleryImage1 from '@assets/stock_images/luxury_indian_weddin_71917f60.jpg';
+import galleryImage2 from '@assets/stock_images/luxury_indian_weddin_2eb74b71.jpg';
+import galleryImage3 from '@assets/stock_images/luxury_indian_weddin_9aafaaa8.jpg';
+import galleryImage4 from '@assets/stock_images/luxury_indian_weddin_0eeea969.jpg';
+import galleryImage5 from '@assets/stock_images/luxury_indian_weddin_9100b3cd.jpg';
+import heroWeddingImage from '@assets/Screenshot 2025-09-28 135337-Picsart-AiImageEnhancer_1759049784464.png';
 
 interface GalleryImage {
   id: number;
@@ -22,38 +23,45 @@ const Gallery = () => {
   const galleryImages: GalleryImage[] = [
     {
       id: 1,
-      src: brideImage,
-      alt: 'The Bride - Traditional Indian Wedding Photography',
+      src: heroWeddingImage,
+      alt: 'Luxury Wedding Couple - Traditional Indian Wedding',
       category: 'wedding',
-      title: 'The Bride'
+      title: 'Timeless Romance'
     },
     {
       id: 2,
-      src: specialMomentsImage,
-      alt: 'Special Moments - Couple Photography',
+      src: galleryImage1,
+      alt: 'Luxury Indian Wedding Photography',
       category: 'wedding',
-      title: 'Special Moments'
+      title: 'Wedding Elegance'
     },
     {
       id: 3,
-      src: loveCollageImage,
-      alt: 'I Love You - Wedding Photo Collage',
+      src: galleryImage2,
+      alt: 'Beautiful Indian Wedding Couple',
       category: 'wedding',
-      title: 'I Love You'
+      title: 'Sacred Moments'
     },
     {
       id: 4,
-      src: engagementImage,
-      alt: 'Engagement Wishes - Ring Photography',
+      src: galleryImage3,
+      alt: 'Traditional Wedding Ceremony',
       category: 'wedding',
-      title: 'Engagement Wishes'
+      title: 'Cultural Heritage'
     },
     {
       id: 5,
-      src: bridalPortraitImage,
-      alt: 'Bridal Portrait with Dramatic Lighting',
-      category: 'portrait',
-      title: 'Bridal Elegance'
+      src: galleryImage4,
+      alt: 'Bridal Portrait Photography',
+      category: 'wedding',
+      title: 'Bridal Beauty'
+    },
+    {
+      id: 6,
+      src: galleryImage5,
+      alt: 'Wedding Celebration Moments',
+      category: 'wedding',
+      title: 'Joyful Celebrations'
     }
   ];
 
@@ -86,7 +94,7 @@ const Gallery = () => {
   };
 
   return (
-    <section className="py-24 bg-background" data-testid="gallery-section">
+    <section id="gallery" className="py-24 bg-background" data-testid="gallery-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
