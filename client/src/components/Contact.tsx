@@ -8,7 +8,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Phone',
-      content: '+91 98610 94038, +91 93374 21992',
+      content: '+91 98610 94038',
       action: () => window.open('tel:+919861094038', '_blank')
     },
     {
