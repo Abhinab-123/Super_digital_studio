@@ -32,7 +32,10 @@ const Navigation = ({ activeSection = 'home' }: NavigationProps) => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    console.log(`Scrolling to ${sectionId} section`);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
     setIsMobileMenuOpen(false);
   };
 

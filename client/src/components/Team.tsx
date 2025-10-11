@@ -29,7 +29,7 @@ const Team = () => {
       name: 'Pradeep Kumar Sukla',
       role: 'Proprietor',
       bio: 'Leading Super Digital with vision and dedication to capture your most precious moments.',
-      image: '/attached_assets/Proprietor___1760170528278.png',
+      image: '/attached_assets/Proprietor___1760172148551.png',
       specialties: ['Leadership', 'Creative Vision', 'Client Relations'],
       socials: {
         instagram: '#',
@@ -41,7 +41,7 @@ const Team = () => {
       name: 'Dilli Kumar Jena',
       role: 'Managing Director',
       bio: 'Managing operations and ensuring excellence in every project we deliver.',
-      image: '/attached_assets/IMG_20250517_201115_1760170819772.jpg',
+      image: '/attached_assets/IMG_20250517_201115_1760172152511.jpg',
       specialties: ['Operations', 'Management', 'Quality Control'],
       socials: {
         instagram: '#',
@@ -53,7 +53,7 @@ const Team = () => {
       name: 'Balaram Mandal',
       role: 'Cinematographer',
       bio: 'Crafting cinematic stories that bring your special moments to life.',
-      image: '/attached_assets/WhatsApp Image 2025-10-11 at 13.38.30_c7e988f6_1760170840669.jpg',
+      image: '/attached_assets/IMG_20250831_185841_1760172159569.jpg',
       specialties: ['Cinematography', 'Video Editing', 'Storytelling'],
       socials: {
         instagram: '#',
@@ -65,7 +65,7 @@ const Team = () => {
       name: 'Sujit Kumar Sahoo',
       role: 'Photographer',
       bio: 'Capturing timeless moments with artistic precision and creative excellence.',
-      image: '/attached_assets/IMG_20250831_185841_1760170836441.jpg',
+      image: '/attached_assets/WhatsApp Image 2025-10-11 at 13.38.30_c7e988f6_1760172163097.jpg',
       specialties: ['Photography', 'Portrait Photography', 'Wedding Photography'],
       socials: {
         instagram: '#',
