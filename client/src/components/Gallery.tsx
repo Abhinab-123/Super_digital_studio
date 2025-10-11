@@ -56,13 +56,6 @@ const Gallery = () => {
       category: 'wedding',
       title: 'Bridal Beauty'
     },
-    {
-      id: 6,
-      src: galleryImage5,
-      alt: 'Wedding Celebration Moments',
-      category: 'wedding',
-      title: 'Joyful Celebrations'
-    }
   ];
 
 

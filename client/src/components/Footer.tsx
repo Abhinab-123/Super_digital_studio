@@ -170,6 +170,13 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <p className="text-background/80 text-sm">
+                  Head office
+                  Rasika Market Complex 
+                  Kandarpur Bazar 
+                  Cuttack
+                  Branch Office 
+                  Niladri Vihar 
+                  Sector 3
                   Bhubaneswar, Odisha<br />India
                 </p>
               </div>

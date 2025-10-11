@@ -105,7 +105,7 @@ const Hero = () => {
               <div className="font-sans text-sm uppercase tracking-wider">Weddings Captured</div>
             </div>
             <div className="text-center">
-              <div className="font-serif text-2xl lg:text-3xl font-light text-primary mb-1">8+</div>
+              <div className="font-serif text-2xl lg:text-3xl font-light text-primary mb-1">18+</div>
               <div className="font-sans text-sm uppercase tracking-wider">Years Experience</div>
             </div>
             <div className="text-center">

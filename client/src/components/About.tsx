@@ -7,7 +7,7 @@ const About = () => {
     { icon: Heart, number: '500+', label: 'Happy Couples' },
     { icon: Camera, number: '1000+', label: 'Photo Sessions' },
     { icon: Award, number: '50+', label: 'Awards Won' },
-    { icon: Users, number: '8+', label: 'Years Experience' },
+    { icon: Users, number: '18+', label: 'Years Experience' },
   ];
 
   return (
