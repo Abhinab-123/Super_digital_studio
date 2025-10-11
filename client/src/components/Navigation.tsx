@@ -66,8 +66,8 @@ const Navigation = ({ activeSection = 'home' }: NavigationProps) => {
       animate={{ opacity: 1, y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-background/95 backdrop-blur-md border-b border-border shadow-sm' 
-          : 'bg-transparent'
+          ? 'bg-black/90 backdrop-blur-md border-b border-white/10 shadow-sm' 
+          : 'bg-black/70 backdrop-blur-sm'
       }`}
       data-testid="navigation-header"
     >
@@ -86,10 +86,10 @@ const Navigation = ({ activeSection = 'home' }: NavigationProps) => {
               data-testid="logo-image"
             />
             <div className="flex flex-col">
-              <span className="font-serif text-lg lg:text-xl font-semibold text-foreground">
+              <span className="font-serif text-lg lg:text-xl font-semibold text-white">
                 Super Digital
               </span>
-              <span className="font-sans text-xs text-muted-foreground hidden sm:block">
+              <span className="font-sans text-xs text-white/70 hidden sm:block">
                 Editorial & Wedding Agency
               </span>
             </div>
@@ -104,7 +104,7 @@ const Navigation = ({ activeSection = 'home' }: NavigationProps) => {
                 className={`font-sans text-sm transition-colors hover:text-primary ${
                   activeSection === item.id 
                     ? 'text-primary font-medium' 
-                    : 'text-foreground/80'
+                    : 'text-white/90'
                 }`}
                 data-testid={`nav-link-${item.id}`}
               >
@@ -116,13 +116,13 @@ const Navigation = ({ activeSection = 'home' }: NavigationProps) => {
           {/* Social Media Icons & Book Now Button */}
           <div className="hidden lg:flex items-center space-x-4">
             {/* Social Media Icons */}
-            <div className="flex items-center space-x-2 pr-4 border-r border-border">
+            <div className="flex items-center space-x-2 pr-4 border-r border-white/20">
               {socialLinks.map((social, index) => (
                 <Button
                   key={index}
                   variant="ghost"
                   size="icon"
-                  className={`h-8 w-8 text-muted-foreground ${social.color} transition-colors`}
+                  className={`h-8 w-8 text-white/70 ${social.color} transition-colors`}
                   onClick={() => window.open(social.href, '_blank')}
                   data-testid={`nav-social-${social.label.toLowerCase()}`}
                 >
@@ -146,7 +146,7 @@ const Navigation = ({ activeSection = 'home' }: NavigationProps) => {
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden"
+            className="lg:hidden text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             data-testid="button-mobile-menu"
           >
@@ -160,7 +160,7 @@ const Navigation = ({ activeSection = 'home' }: NavigationProps) => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden border-t border-border bg-background/95 backdrop-blur-md"
+            className="lg:hidden border-t border-white/10 bg-black/95 backdrop-blur-md"
             data-testid="mobile-navigation"
           >
             <div className="px-4 py-6 space-y-4">
@@ -171,7 +171,7 @@ const Navigation = ({ activeSection = 'home' }: NavigationProps) => {
                   className={`block w-full text-left font-sans text-base transition-colors hover:text-primary ${
                     activeSection === item.id 
                       ? 'text-primary font-medium' 
-                      : 'text-foreground'
+                      : 'text-white'
                   }`}
                   data-testid={`mobile-nav-link-${item.id}`}
                 >
@@ -180,13 +180,13 @@ const Navigation = ({ activeSection = 'home' }: NavigationProps) => {
               ))}
               
               {/* Mobile Social Media Icons */}
-              <div className="flex items-center justify-center space-x-4 pt-4 border-t border-border">
+              <div className="flex items-center justify-center space-x-4 pt-4 border-t border-white/10">
                 {socialLinks.map((social, index) => (
                   <Button
                     key={index}
                     variant="ghost"
                     size="icon"
-                    className={`text-muted-foreground ${social.color} transition-colors`}
+                    className={`text-white/70 ${social.color} transition-colors`}
                     onClick={() => window.open(social.href, '_blank')}
                     data-testid={`mobile-social-${social.label.toLowerCase()}`}
                   >

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroImage from '@assets/stock_images/indian_bride_and_gro_a826c887.jpg';
+import heroImage from '@assets/vecteezy_indian-wedding-photography-in-bangalore_50494463_1760174368940.jpg';
 
 const Hero = () => {
   const handleBookService = () => {
@@ -25,7 +25,7 @@ const Hero = () => {
           className="w-full h-full object-cover blur-[1px]"
           data-testid="hero-background-image"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
       </div>
 
       {/* Content */}
