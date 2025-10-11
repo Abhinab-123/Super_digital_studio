@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroImage from '@assets/stock_images/traditional_indian_w_9e730f51.jpg';
+import heroImage from '@assets/stock_images/indian_bride_and_gro_a826c887.jpg';
 
 const Hero = () => {
   const handleBookService = () => {
