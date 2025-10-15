@@ -2,12 +2,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import galleryImage1 from '@assets/stock_images/luxury_indian_weddin_71917f60.jpg';
-import galleryImage2 from '@assets/stock_images/luxury_indian_weddin_2eb74b71.jpg';
-import galleryImage3 from '@assets/stock_images/luxury_indian_weddin_9aafaaa8.jpg';
-import galleryImage4 from '@assets/stock_images/luxury_indian_weddin_0eeea969.jpg';
-import galleryImage5 from '@assets/stock_images/luxury_indian_weddin_9100b3cd.jpg';
-import heroWeddingImage from '@assets/Screenshot 2025-09-28 135337-Picsart-AiImageEnhancer_1759049784464.png';
 
 interface GalleryImage {
   id: number;
@@ -23,38 +17,52 @@ const Gallery = () => {
   const galleryImages: GalleryImage[] = [
     {
       id: 1,
-      src: heroWeddingImage,
-      alt: 'Luxury Wedding Couple - Traditional Indian Wedding',
+      src: 'https://i.pinimg.com/736x/6d/93/32/6d9332810c8fda1687a715046be474c3.jpg',
+      alt: 'Pre-Wedding photos of a couple in a temple during golden hour',
       category: 'wedding',
-      title: 'Timeless Romance'
+      title: 'Temple Romance'
     },
     {
       id: 2,
-      src: galleryImage1,
-      alt: 'Luxury Indian Wedding Photography',
+      src: 'https://i.pinimg.com/736x/b4/be/41/b4be41a7f80f4f7ceeb9e6af90ae24a4.jpg',
+      alt: 'South Indian look pre-wedding photoshoot',
       category: 'wedding',
-      title: 'Wedding Elegance'
+      title: 'South Indian Elegance'
     },
     {
       id: 3,
-      src: galleryImage2,
-      alt: 'Beautiful Indian Wedding Couple',
+      src: 'https://i.pinimg.com/736x/99/98/17/9998175e84df270a5c67fb25a5d42122.jpg',
+      alt: 'Outdoor pre-wedding couple photography',
       category: 'wedding',
-      title: 'Sacred Moments'
+      title: 'Forever Always'
     },
     {
       id: 4,
-      src: galleryImage3,
-      alt: 'Traditional Wedding Ceremony',
+      src: 'https://i.pinimg.com/736x/4e/02/8e/4e028e06759ec55a6f44f27f0e437088.jpg',
+      alt: 'Playful pre-wedding couple moment',
       category: 'wedding',
-      title: 'Cultural Heritage'
+      title: 'Joyful Moments'
     },
     {
       id: 5,
-      src: galleryImage4,
-      alt: 'Bridal Portrait Photography',
+      src: 'https://i.pinimg.com/736x/50/51/2e/50512e3a7547f47699d45acc6a56ae32.jpg',
+      alt: 'Elegant couple walking on steps',
       category: 'wedding',
-      title: 'Bridal Beauty'
+      title: 'Traditional Grace'
+    },
+    {
+      id: 6,
+      src: 'https://i.pinimg.com/736x/cb/6f/8b/cb6f8bbfe5e8eae2e54ef637a1b33268.jpg',
+      alt: 'Maharashtrian wedding couple photography',
+      category: 'wedding',
+      title: 'Cultural Beauty'
+    },
+    {
+      id: 7,
+      src: 'https://i.pinimg.com/736x/3e/0b/86/3e0b8669fe8d068484ad8967594cbf87.jpg',
+      alt: 'Couple picnic pre-wedding photoshoot',
+      category: 'wedding',
+      title: 'Casual Romance'
     },
   ];
 
