@@ -11,9 +11,17 @@ Super Digital is a luxury editorial and wedding agency website built as a single
 
 ## Recent Changes
 
+**October 15, 2025** - Vercel Deployment Configuration
+- Configured application for Vercel serverless deployment
+- Created `/api/index.ts` serverless function for API endpoints
+- Updated `vercel.json` with proper routing for SPA and API requests
+- Moved build dependencies to production dependencies for Vercel compatibility
+- Updated `.vercelignore` to exclude unnecessary files while preserving required serverless dependencies
+- Created comprehensive deployment documentation in `VERCEL_DEPLOYMENT.md`
+
 **October 15, 2025** - Google Drive Integration
 - Integrated Google Drive API for dynamic gallery management
-- Created `/api/gallery/images` endpoint to fetch images from Google Drive folder (ID: 1mUnobojOJOIC-fSOtqEG3cKtILrMXPUL)
+- Created `/api/gallery/images` endpoint to fetch images from Google Drive folder (ID: 1mxCjf6PMcVRH4ygpi4TI_jEQEeFI-oR9)
 - Updated Gallery component to use React Query for automatic data fetching
 - Implemented comprehensive error handling with retry functionality and loading states
 - Added Replit Google Drive connector for secure OAuth authentication
