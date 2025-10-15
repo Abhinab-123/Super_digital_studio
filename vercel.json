@@ -1,14 +1,11 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["client/dist/**"]
-      }
+  "functions": {
+    "server/index.js": {
+      "runtime": "nodejs18.x",
+      "includeFiles": "client/dist/**"
     }
-  ],
+  },
   "routes": [
     {
       "src": "/api/(.*)",
@@ -18,10 +15,5 @@
       "src": "/(.*)",
       "dest": "/client/dist/index.html"
     }
-  ],
-  "functions": {
-    "server/index.js": {
-      "includeFiles": "client/dist/**"
-    }
-  }
+  ]
 }
