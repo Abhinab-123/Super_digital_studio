@@ -4,6 +4,20 @@
 
 Super Digital is a luxury editorial and wedding agency website built as a single-page application showcasing premium photography, videography, and event management services. The application features a modern, visually-rich design with smooth animations, interactive galleries, and seamless navigation. Built with React and TypeScript on the frontend with Express.js backend infrastructure, it emphasizes luxury branding through carefully crafted visual hierarchy and elegant user interactions.
 
+**Key Features:**
+- **Dynamic Google Drive Gallery** - Portfolio images automatically sync from a Google Drive folder, updating in real-time when new photos are added
+- **Automatic Image Management** - No manual uploads needed; simply add/remove images in Google Drive
+- **Responsive Error Handling** - Graceful fallbacks with retry functionality if image loading fails
+
+## Recent Changes
+
+**October 15, 2025** - Google Drive Integration
+- Integrated Google Drive API for dynamic gallery management
+- Created `/api/gallery/images` endpoint to fetch images from Google Drive folder (ID: 1mUnobojOJOIC-fSOtqEG3cKtILrMXPUL)
+- Updated Gallery component to use React Query for automatic data fetching
+- Implemented comprehensive error handling with retry functionality and loading states
+- Added Replit Google Drive connector for secure OAuth authentication
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
@@ -108,6 +122,7 @@ Implemented through CSS custom properties with HSL values:
 - **PostgreSQL** via Neon serverless driver
 - **Drizzle ORM** with Drizzle Kit for migrations
 - **Connect-pg-simple** - PostgreSQL session store (configured but not actively used)
+- **Google Drive API** via googleapis package for dynamic gallery image management
 
 **Development Tools:**
 - **TypeScript** - Type checking across full stack
