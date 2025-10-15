@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useQuery } from '@tanstack/react-query';
 
 interface GalleryImage {
   id: number;
@@ -14,57 +15,9 @@ interface GalleryImage {
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
 
-  const galleryImages: GalleryImage[] = [
-    {
-      id: 1,
-      src: 'https://i.pinimg.com/736x/6d/93/32/6d9332810c8fda1687a715046be474c3.jpg',
-      alt: 'Pre-Wedding photos of a couple in a temple during golden hour',
-      category: 'wedding',
-      title: 'Temple Romance'
-    },
-    {
-      id: 2,
-      src: 'https://i.pinimg.com/736x/b4/be/41/b4be41a7f80f4f7ceeb9e6af90ae24a4.jpg',
-      alt: 'South Indian look pre-wedding photoshoot',
-      category: 'wedding',
-      title: 'South Indian Elegance'
-    },
-    {
-      id: 3,
-      src: 'https://i.pinimg.com/736x/99/98/17/9998175e84df270a5c67fb25a5d42122.jpg',
-      alt: 'Outdoor pre-wedding couple photography',
-      category: 'wedding',
-      title: 'Forever Always'
-    },
-    {
-      id: 4,
-      src: 'https://i.pinimg.com/736x/4e/02/8e/4e028e06759ec55a6f44f27f0e437088.jpg',
-      alt: 'Playful pre-wedding couple moment',
-      category: 'wedding',
-      title: 'Joyful Moments'
-    },
-    {
-      id: 5,
-      src: 'https://i.pinimg.com/736x/50/51/2e/50512e3a7547f47699d45acc6a56ae32.jpg',
-      alt: 'Elegant couple walking on steps',
-      category: 'wedding',
-      title: 'Traditional Grace'
-    },
-    {
-      id: 6,
-      src: 'https://i.pinimg.com/736x/cb/6f/8b/cb6f8bbfe5e8eae2e54ef637a1b33268.jpg',
-      alt: 'Maharashtrian wedding couple photography',
-      category: 'wedding',
-      title: 'Cultural Beauty'
-    },
-    {
-      id: 7,
-      src: 'https://i.pinimg.com/736x/3e/0b/86/3e0b8669fe8d068484ad8967594cbf87.jpg',
-      alt: 'Couple picnic pre-wedding photoshoot',
-      category: 'wedding',
-      title: 'Casual Romance'
-    },
-  ];
+  const { data: galleryImages = [], isLoading } = useQuery<GalleryImage[]>({
+    queryKey: ['/api/gallery/images'],
+  });
 
 
   const filteredImages = galleryImages;
@@ -120,12 +73,19 @@ const Gallery = () => {
 
 
         {/* Gallery Grid */}
-        <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-          layout
-        >
-          <AnimatePresence mode="wait">
-            {filteredImages.map((image, index) => (
+        {isLoading ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {[...Array(8)].map((_, i) => (
+              <div key={i} className="aspect-square bg-muted animate-pulse rounded-lg" />
+            ))}
+          </div>
+        ) : (
+          <motion.div 
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            layout
+          >
+            <AnimatePresence mode="wait">
+              {filteredImages.map((image, index) => (
               <motion.div
                 key={image.id}
                 layout
@@ -155,8 +115,9 @@ const Gallery = () => {
                 </div>
               </motion.div>
             ))}
-          </AnimatePresence>
-        </motion.div>
+            </AnimatePresence>
+          </motion.div>
+        )}
 
         {/* Lightbox */}
         <AnimatePresence>
