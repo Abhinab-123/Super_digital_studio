@@ -50,7 +50,7 @@ export async function getUncachableGoogleDriveClient() {
   return google.drive({ version: 'v3', auth: oauth2Client });
 }
 
-const FOLDER_ID = '1mxCjf6PMcVRH4ygpi4TI_jEQEeFI-oR9';
+const FOLDER_ID = '1mUnobojOJOIC-fSOtqEG3cKtILrMXPUL';
 
 export async function getGalleryImages() {
   try {

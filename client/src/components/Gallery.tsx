@@ -15,8 +15,9 @@ interface GalleryImage {
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
 
-  const { data: galleryImages = [], isLoading } = useQuery<GalleryImage[]>({
+  const { data: galleryImages = [], isLoading, isError, isFetching, refetch } = useQuery<GalleryImage[]>({
     queryKey: ['/api/gallery/images'],
+    retry: 2,
   });
 
 
@@ -78,6 +79,23 @@ const Gallery = () => {
             {[...Array(8)].map((_, i) => (
               <div key={i} className="aspect-square bg-muted animate-pulse rounded-lg" />
             ))}
+          </div>
+        ) : isError ? (
+          <div className="text-center py-12">
+            <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-8 max-w-md mx-auto">
+              <h3 className="text-lg font-semibold text-destructive mb-2">Failed to Load Gallery</h3>
+              <p className="text-muted-foreground mb-4">
+                We couldn't fetch the images from Google Drive. Please try again.
+              </p>
+              <Button 
+                onClick={() => refetch()} 
+                variant="outline"
+                disabled={isFetching}
+                data-testid="button-retry-gallery"
+              >
+                {isFetching ? 'Retrying...' : 'Retry'}
+              </Button>
+            </div>
           </div>
         ) : (
           <motion.div 
