@@ -6,6 +6,8 @@ import pradeepImage from '@assets/Proprietor___1760172148551.png';
 import dilliImage from '@assets/IMG_20250517_201115_1760195582123.jpg';
 import balaramImage from '@assets/IMG_20250831_185841_1760172159569.jpg';
 import sujitImage from '@assets/WhatsApp Image 2025-10-11 at 13.38.30_c7e988f6_1760172163097.jpg';
+import himansuImage from '@assets/WhatsApp Image 2025-10-17 at 13.24.24_99dff6b4_1760687934626.jpg';
+import laxmidharImage from '@assets/Gemini_Generated_Image_3u6r8i3u6r8i3u6r_1760687938481.png';
 
 interface TeamMember {
   name: string;
@@ -68,6 +70,30 @@ const Team = () => {
         instagram: '#',
         linkedin: '#',
         email: 'sujit@superdigital.com'
+      }
+    },
+    {
+      name: 'Himansu Sekhara Maharana',
+      role: 'Cinematographer',
+      bio: 'Bringing stories to life through cinematic excellence and creative vision.',
+      image: himansuImage,
+      specialties: ['Cinematography', 'Video Production', 'Creative Storytelling'],
+      socials: {
+        instagram: '#',
+        linkedin: '#',
+        email: 'himansu@superdigital.com'
+      }
+    },
+    {
+      name: 'Laxmidhar Ojha',
+      role: 'Cinematographer',
+      bio: 'Crafting visual narratives with passion and professional expertise.',
+      image: laxmidharImage,
+      specialties: ['Cinematography', 'Video Editing', 'Visual Storytelling'],
+      socials: {
+        instagram: '#',
+        linkedin: '#',
+        email: 'laxmidhar@superdigital.com'
       }
     }
   ];
@@ -194,9 +220,9 @@ const Team = () => {
             </motion.div>
           ))}
 
-          {/* Last 2 Members - Compact Cubic Cards Side by Side */}
+          {/* Last 4 Members - Compact Cubic Cards Side by Side */}
           <div className="grid grid-cols-2 gap-4">
-            {teamMembers.slice(2, 4).map((member, index) => {
+            {teamMembers.slice(2, 6).map((member, index) => {
               const actualIndex = index + 2;
               return (
                 <motion.div
@@ -329,9 +355,9 @@ const Team = () => {
             ))}
           </div>
 
-          {/* Last 2 Members - Compact Cubic Cards */}
-          <div className="flex justify-center gap-6">
-            {teamMembers.slice(2, 4).map((member, index) => {
+          {/* Last 4 Members - Compact Cubic Cards */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {teamMembers.slice(2, 6).map((member, index) => {
               const actualIndex = index + 2;
               return (
                 <motion.div
@@ -341,7 +367,6 @@ const Team = () => {
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   viewport={{ once: true }}
                   data-testid={`team-member-${actualIndex}`}
-                  className="w-64"
                 >
                   <Card className="overflow-hidden group hover-elevate border-card-border bg-background">
                     <div className="relative overflow-hidden">
