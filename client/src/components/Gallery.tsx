@@ -85,7 +85,7 @@ const Gallery = () => {
             <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-8 max-w-md mx-auto">
               <h3 className="text-lg font-semibold text-destructive mb-2">Failed to Load Gallery</h3>
               <p className="text-muted-foreground mb-4">
-                We couldn't fetch the images from Google Drive. Please try again.
+                We couldn't fetch the images from Cloudinary. Please try again.
               </p>
               <Button 
                 onClick={() => refetch()} 
