@@ -21,7 +21,7 @@ const Contact = () => {
       icon: MapPin,
       title: 'Studio Location',
       content: 'Bhubaneswar, Odisha, India',
-      action: () => console.log('Opening map location')
+      action: () => window.open('https://maps.app.goo.gl/Q2kNjqnyWHqPg76C6?g_st=aw', '_blank')
     }
   ];
 
