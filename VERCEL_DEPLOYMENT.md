@@ -47,15 +47,12 @@ In the Vercel dashboard, add these environment variables:
    - Format: `postgresql://user:password@host:port/database`
    - For Neon DB (recommended): Get from your Neon dashboard
 
-2. **Google Drive Integration** (if using Google Drive for gallery):
-   - **REPLIT_CONNECTORS_HOSTNAME**: Contact support or use alternative auth
-   - **REPL_IDENTITY**: Contact support or use alternative auth
-   - **WEB_REPL_RENEWAL**: Contact support or use alternative auth
-
-   **Note**: Replit connectors are Replit-specific. For Vercel, you'll need to:
-   - Set up Google Drive OAuth separately
-   - Create a Google Cloud project and enable Drive API
-   - Get OAuth credentials and add them as environment variables
+2. **Cloudinary Integration** (for gallery images):
+   - **CLOUDINARY_CLOUD_NAME**: Your Cloudinary cloud name (from dashboard)
+   - **CLOUDINARY_API_KEY**: Your Cloudinary API key
+   - **CLOUDINARY_API_SECRET**: Your Cloudinary API secret
+   
+   Get these from: [Cloudinary Dashboard](https://cloudinary.com/console)
 
 3. **NODE_ENV**
    - Set to: `production`
@@ -83,25 +80,27 @@ In the Vercel dashboard, add these environment variables:
 
 Both work well with Vercel and offer free tiers.
 
-## Google Drive Integration for Vercel
+## Cloudinary Setup for Vercel
 
-Since Replit connectors won't work on Vercel, you have two options:
+Your gallery images are managed through Cloudinary:
 
-### Option 1: Use Google Cloud OAuth (Recommended)
+1. **Create/Login to Cloudinary Account**
+   - Go to [cloudinary.com](https://cloudinary.com)
+   - Sign up or log in to your account
 
-1. Go to [Google Cloud Console](https://console.cloud.google.com)
-2. Create a new project
-3. Enable Google Drive API
-4. Create OAuth 2.0 credentials
-5. Add authorized redirect URIs
-6. Update `server/services/googleDrive.ts` to use OAuth credentials from environment variables
+2. **Get Your Credentials**
+   - From your Cloudinary Dashboard
+   - Copy: Cloud Name, API Key, and API Secret
 
-### Option 2: Use Service Account
+3. **Upload Images**
+   - Navigate to Media Library
+   - Create a folder named "studio"
+   - Upload your portfolio images to this folder
 
-1. Create a service account in Google Cloud
-2. Download the JSON key file
-3. Share your Google Drive folder with the service account email
-4. Add the service account credentials as environment variables
+4. **Add to Vercel**
+   - In Vercel dashboard → Environment Variables
+   - Add all three Cloudinary credentials
+   - Redeploy if already deployed
 
 ## Troubleshooting
 
@@ -134,7 +133,7 @@ Since Replit connectors won't work on Vercel, you have two options:
    - Homepage loads correctly
    - API endpoints respond
    - Database operations work
-   - Google Drive images load (if configured)
+   - Cloudinary gallery images load correctly
 
 2. Set up custom domain (optional):
    - Go to project settings in Vercel
