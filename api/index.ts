@@ -1,5 +1,5 @@
 import express, { type Request, Response, NextFunction } from "express";
-import { getGalleryImages } from "../server/services/googleDrive";
+import { getCloudinaryImages } from "../server/services/cloudinary";
 
 const app = express();
 app.use(express.json());
@@ -7,7 +7,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.get('/gallery/images', async (req, res) => {
   try {
-    const images = await getGalleryImages();
+    const images = await getCloudinaryImages();
     res.json(images);
   } catch (error) {
     console.error('Error fetching gallery images:', error);

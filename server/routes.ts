@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { getGalleryImages } from "./services/googleDrive";
+import { getCloudinaryImages } from "./services/cloudinary";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // put application routes here
@@ -12,7 +12,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   app.get('/api/gallery/images', async (req, res) => {
     try {
-      const images = await getGalleryImages();
+      const images = await getCloudinaryImages();
       res.json(images);
     } catch (error) {
       console.error('Error fetching gallery images:', error);
