@@ -53,7 +53,7 @@ const Footer = () => {
     <footer className="bg-foreground text-background" data-testid="footer-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Brand Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -119,29 +119,6 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Services */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="font-serif text-lg font-medium mb-6">Our Services</h4>
-            <ul className="space-y-3">
-              {services.map((service, index) => (
-                <li key={index}>
-                  <button
-                    onClick={() => handleNavClick(service.href)}
-                    className="text-background/70 hover:text-background transition-colors text-left"
-                    data-testid={`footer-service-${service.label.toLowerCase().replace(' ', '-')}`}
-                  >
-                    {service.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -152,9 +129,18 @@ const Footer = () => {
             <h4 className="font-serif text-lg font-medium mb-6">Get In Touch</h4>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <Phone className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="text-background/80 text-sm">+91 98610 94038</p>
+                <MapPin className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                <div className="text-background/80 text-sm space-y-3">
+                  <div className="grid grid-cols-1 gap-3">
+                    <div>
+                      <p className="font-semibold text-background mb-1">Head Office</p>
+                      <p>Rasika Market Complex, Kandarpur Bazar, Cuttack</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-background mb-1">Branch Office</p>
+                      <p>Niladri Vihar, Sector 3, Bhubaneswar, Odisha, India</p>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
@@ -168,17 +154,10 @@ const Footer = () => {
                 </a>
               </div>
               <div className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                <p className="text-background/80 text-sm">
-                  Head office
-                  Rasika Market Complex 
-                  Kandarpur Bazar 
-                  Cuttack
-                  Branch Office 
-                  Niladri Vihar 
-                  Sector 3
-                  Bhubaneswar, Odisha<br />India
-                </p>
+                <Phone className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-background/80 text-sm">+91 98610 94038</p>
+                </div>
               </div>
             </div>
 
