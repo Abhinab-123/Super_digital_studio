@@ -10,9 +10,9 @@ const isCloudinaryConfigured = !!(
 
 if (isCloudinaryConfigured) {
   cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET
+    cloud_name:"dhzwv9qhg",
+    api_key:"556636492725719",
+    api_secret:"3M3--12VhJqSFCjtsDTJf44JdBI"
   });
 }
 
