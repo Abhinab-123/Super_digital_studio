@@ -8,12 +8,34 @@ cloudinary.config({
 
 export async function getCloudinaryImages() {
   try {
-    const result = await cloudinary.api.resources({
-      type: 'upload',
-      prefix: 'studio/',
-      max_results: 500,
-      resource_type: 'image'
-    });
+    let result;
+    
+    try {
+      result = await cloudinary.api.resources_by_asset_folder('studio', {
+        max_results: 500,
+        resource_type: 'image'
+      });
+      console.log(`Found ${result.resources?.length || 0} images in studio folder using asset folder API`);
+    } catch (folderError) {
+      console.log('Folder API failed, trying prefix method:', folderError);
+      result = await cloudinary.api.resources({
+        type: 'upload',
+        prefix: 'studio/',
+        max_results: 500,
+        resource_type: 'image'
+      });
+      console.log(`Found ${result.resources?.length || 0} images with studio/ prefix`);
+    }
+
+    if (!result.resources || result.resources.length === 0) {
+      console.log('No images found, trying to fetch all images');
+      result = await cloudinary.api.resources({
+        type: 'upload',
+        max_results: 500,
+        resource_type: 'image'
+      });
+      console.log(`Found ${result.resources?.length || 0} total images in account`);
+    }
 
     return result.resources.map((resource: any, index: number) => ({
       id: index + 1,
