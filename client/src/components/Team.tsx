@@ -140,11 +140,11 @@ const Team = () => {
               data-testid={`team-member-${index}`}
             >
               <Card className="overflow-hidden group hover-elevate border-card-border bg-background">
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden bg-muted">
                   <img 
                     src={member.image}
                     alt={`${member.name} - ${member.role}`}
-                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-80 object-contain group-hover:scale-105 transition-transform duration-700"
                     data-testid={`team-image-${index}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -274,11 +274,11 @@ const Team = () => {
                 data-testid={`team-member-${index}`}
               >
                 <Card className="overflow-hidden group hover-elevate border-card-border bg-background">
-                  <div className="relative overflow-hidden">
+                  <div className="relative overflow-hidden bg-muted">
                     <img 
                       src={member.image}
                       alt={`${member.name} - ${member.role}`}
-                      className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-80 object-contain group-hover:scale-105 transition-transform duration-700"
                       data-testid={`team-image-${index}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
