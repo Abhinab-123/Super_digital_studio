@@ -45,15 +45,9 @@ const About = () => {
                 className="space-y-4"
               >
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Super Digital was born from a passion for capturing life's most precious moments 
-                  through the lens of luxury and artistry. We believe every love story deserves to 
-                  be told with elegance, sophistication, and timeless beauty.
+                  Super Digital captures your love story with beauty and care — creating timeless photos you’ll                        cherish forever
                 </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Our approach combines editorial finesse with intimate storytelling, creating 
-                  visual narratives that transcend ordinary photography. We don't just capture 
-                  moments—we craft heirlooms.
-                </p>
+              
               </motion.div>
 
               <motion.div

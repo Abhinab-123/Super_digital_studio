@@ -131,9 +131,6 @@ const Services = () => {
           className="text-center mt-16"
         >
           <div className="bg-card border border-card-border rounded-lg p-8 lg:p-12">
-            <h3 className="font-serif text-3xl font-light text-card-foreground mb-4">
-              Ready to Create Something Beautiful?
-            </h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               Let's discuss your vision and create a custom package that perfectly matches your needs and budget.
             </p>
