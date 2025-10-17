@@ -2,27 +2,20 @@ import { v2 as cloudinary } from 'cloudinary';
 import fs from 'fs/promises';
 import path from 'path';
 
-const isCloudinaryConfigured = !!(
-  process.env.CLOUDINARY_CLOUD_NAME &&
-  process.env.CLOUDINARY_API_KEY &&
-  process.env.CLOUDINARY_API_SECRET
-);
-
-if (isCloudinaryConfigured) {
-  cloudinary.config({
-    cloud_name:"dhzwv9qhg",
-    api_key:"556636492725719",
-    api_secret:"3M3--12VhJqSFCjtsDTJf44JdBI"
-  });
-}
+// Directly configure Cloudinary
+cloudinary.config({
+  cloud_name: "dhzwv9qhg",
+  api_key: "556636492725719",
+  api_secret: "3M3--12VhJqSFCjtsDTJf44JdBI"
+});
 
 async function getLocalImages() {
   const assetsDir = path.join(process.cwd(), 'attached_assets');
-  
+
   try {
     const files = await fs.readdir(assetsDir);
     const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
-    
+
     const imageFiles = files.filter(file => {
       const ext = path.extname(file).toLowerCase();
       return imageExtensions.includes(ext);
@@ -42,14 +35,9 @@ async function getLocalImages() {
 }
 
 export async function getCloudinaryImages() {
-  if (!isCloudinaryConfigured) {
-    console.log('Cloudinary not configured, using local images');
-    return getLocalImages();
-  }
-
   try {
     let result;
-    
+
     try {
       result = await cloudinary.api.resources_by_asset_folder('studio', {
         max_results: 500,
