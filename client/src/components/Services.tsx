@@ -121,28 +121,6 @@ const Services = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <div className="bg-card border border-card-border rounded-lg p-8 lg:p-12">
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Let's discuss your vision and create a custom package that perfectly matches your needs and budget.
-            </p>
-            <Button 
-              size="lg"
-              onClick={() => handleBookService('Custom Package')}
-              data-testid="button-custom-package"
-            >
-              Get Custom Quote
-            </Button>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
