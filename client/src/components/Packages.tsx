@@ -47,7 +47,7 @@ const Packages = () => {
                   <h3 className="font-serif text-2xl font-light text-card-foreground mb-2">Silver Package</h3>
                   <div className="text-4xl font-bold text-primary mb-4">₹50,000</div>
                 </div>
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-4 mb-6">
                   <li className="flex items-start text-sm text-muted-foreground">
                     <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
                     <span>1 Traditional photo and video shoot</span>
@@ -64,7 +64,14 @@ const Packages = () => {
                     <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
                     <span>Wedding Invitation Included</span>
                   </li>
+                  <li className="flex items-start text-sm text-muted-foreground">
+                    <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
+                    <span>2 Hour video output</span>
+                  </li>
                 </ul>
+                <p className="text-xs text-muted-foreground italic mb-6">
+                  *Consultant available for extra day shoot
+                </p>
                 <Button 
                   variant="outline" 
                   className="w-full"
@@ -93,10 +100,14 @@ const Packages = () => {
                   <h3 className="font-serif text-2xl font-light text-card-foreground mb-2">Gold Package</h3>
                   <div className="text-4xl font-bold text-primary mb-4">₹1,00,000</div>
                 </div>
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-4 mb-6">
                   <li className="flex items-start text-sm text-muted-foreground">
                     <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
                     <span>1 Videograph (Traditional and Cinematic video shoot)</span>
+                  </li>
+                  <li className="flex items-start text-sm text-muted-foreground">
+                    <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
+                    <span>1 Candid photoshoot</span>
                   </li>
                   <li className="flex items-start text-sm text-muted-foreground">
                     <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
@@ -110,7 +121,14 @@ const Packages = () => {
                     <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
                     <span>Wedding Invitation Included</span>
                   </li>
+                  <li className="flex items-start text-sm text-muted-foreground">
+                    <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
+                    <span>1 LED and Drone for Reception</span>
+                  </li>
                 </ul>
+                <p className="text-xs text-muted-foreground italic mb-6">
+                  *Consultant available for extra day shoot
+                </p>
                 <Button 
                   className="w-full"
                   onClick={() => handleBookPackage('Gold Package')}
@@ -135,7 +153,7 @@ const Packages = () => {
                   <h3 className="font-serif text-2xl font-light text-card-foreground mb-2">Diamond Package</h3>
                   <div className="text-4xl font-bold text-primary mb-4">₹1,50,000</div>
                 </div>
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-4 mb-6">
                   <li className="flex items-start text-sm text-muted-foreground">
                     <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
                     <span>2 Days cinematic video shoot</span>
@@ -146,13 +164,24 @@ const Packages = () => {
                   </li>
                   <li className="flex items-start text-sm text-muted-foreground">
                     <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
-                    <span>50 Page photo book + Mini photo book + Calendar</span>
+                    <span>50 Page photo book + Mini photo book + Calendar (Premium quality)</span>
                   </li>
                   <li className="flex items-start text-sm text-muted-foreground">
                     <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
                     <span>Wedding Invitation Included</span>
                   </li>
+                  <li className="flex items-start text-sm text-muted-foreground">
+                    <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
+                    <span>2 LED and Drone for Reception and Wedding</span>
+                  </li>
+                  <li className="flex items-start text-sm text-muted-foreground">
+                    <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
+                    <span>Treasure + Highlight</span>
+                  </li>
                 </ul>
+                <p className="text-xs text-muted-foreground italic mb-6">
+                  *Consultant available for extra day shoot
+                </p>
                 <Button 
                   variant="outline" 
                   className="w-full"
