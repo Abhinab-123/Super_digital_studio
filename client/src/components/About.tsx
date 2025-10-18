@@ -32,7 +32,7 @@ const About = () => {
                   Our Story
                 </span>
                 <h2 className="font-serif text-4xl lg:text-5xl font-light text-foreground mb-6">
-                  Where Art Meets
+                  Where Art Meet
                   <span className="text-primary block">Emotion</span>
                 </h2>
               </motion.div>
