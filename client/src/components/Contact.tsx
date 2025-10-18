@@ -20,7 +20,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Studio Location',
-      content: 'Bhubaneswar, Odisha, India',
+      content: 'Cuttack, Odisha, India',
       action: () => window.open('https://maps.app.goo.gl/Q2kNjqnyWHqPg76C6?g_st=aw', '_blank')
     }
   ];
