@@ -1,25 +1,29 @@
 import { getCloudinaryImages } from "../server/services/cloudinary";
-import type { Request, Response } from "express";
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 
-export default async function handler(req: Request, res: Response) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') {
-    res.status(200).end();
-    return;
+    return res.status(200).end();
   }
 
-  if (req.url === '/api/gallery/images' && req.method === 'GET') {
+  if (req.method === 'GET') {
     try {
+      console.log('Fetching images from Cloudinary...');
       const images = await getCloudinaryImages();
-      res.status(200).json(images);
+      console.log(`Successfully fetched ${images.length} images`);
+      return res.status(200).json(images);
     } catch (error) {
       console.error('Error fetching gallery images:', error);
-      res.status(500).json({ error: 'Failed to fetch gallery images' });
+      return res.status(500).json({ 
+        error: 'Failed to fetch gallery images',
+        message: error instanceof Error ? error.message : 'Unknown error'
+      });
     }
-  } else {
-    res.status(404).json({ error: 'Not Found' });
   }
+
+  return res.status(405).json({ error: 'Method not allowed' });
 }
