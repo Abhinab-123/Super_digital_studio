@@ -27,18 +27,32 @@ Before deploying, make sure you have:
 **CRITICAL**: You must add these three environment variables for the gallery to work:
 
 1. In your Vercel project, go to **Settings** → **Environment Variables**
-2. Add the following variables:
+2. Click **"Create new"** or **"Add Another"**
+3. Add the following three variables one by one:
 
-```
-CLOUDINARY_CLOUD_NAME=dhzwv9qhg
-CLOUDINARY_API_KEY=556636492725719
-CLOUDINARY_API_SECRET=3M3--12VhJqSFCjtsDTJf44JdBI
-```
+**First Variable:**
+- Key: `CLOUDINARY_CLOUD_NAME`
+- Value: `dhzwv9qhg`
 
-3. Make sure to select all three environments:
+**Second Variable:**
+- Key: `CLOUDINARY_API_KEY`
+- Value: `556636492725719`
+
+**Third Variable:**
+- Key: `CLOUDINARY_API_SECRET`
+- Value: `3M3--12VhJqSFCjtsDTJf44JdBI`
+
+4. **IMPORTANT**: For each variable, make sure to select all three environments:
    - ✅ Production
    - ✅ Preview
    - ✅ Development
+
+5. Click **"Save"** after adding all three variables
+
+**After adding the variables, you MUST redeploy your project:**
+- Go to the **Deployments** tab
+- Click on the latest deployment
+- Click **"Redeploy"** button
 
 ### Step 3: Verify Build Settings
 
