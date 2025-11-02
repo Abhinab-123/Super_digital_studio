@@ -67,8 +67,6 @@ const Gallery = () => {
             <span className="text-primary block">Moments Captured</span>
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Explore our collection of luxury weddings, editorial shoots, and intimate portraits 
-            that showcase our commitment to artistic excellence.
           </p>
         </motion.div>
 

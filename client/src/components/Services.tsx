@@ -60,8 +60,7 @@ const Services = () => {
             <span className="text-primary block">Wedding Services</span>
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            From intimate ceremonies to grand celebrations, we offer comprehensive luxury services 
-            that transform your vision into an extraordinary reality.
+
           </p>
         </motion.div>
 
