@@ -38,7 +38,7 @@ const Hero = () => {
         >
           {/* Main Headline */}
           <motion.h1 
-            className="font-serif text-4xl sm:text-5xl lg:text-7xl font-light text-white leading-tight mb-6"
+            className="font-serif text-3xl sm:text-5xl lg:text-7xl font-light text-white leading-tight mb-4 sm:mb-6 px-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -53,7 +53,7 @@ const Hero = () => {
 
           {/* Subtitle */}
           <motion.p 
-            className="font-sans text-lg sm:text-xl lg:text-2xl text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed"
+            className="font-sans text-base sm:text-xl lg:text-2xl text-white/90 max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -65,7 +65,7 @@ const Hero = () => {
 
           {/* Call-to-Action Buttons */}
           <motion.div 
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 px-4 w-full sm:w-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -73,44 +73,44 @@ const Hero = () => {
             <Button 
               size="lg"
               onClick={handleBookService}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 font-sans text-base px-8 py-3 group"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 font-sans text-sm sm:text-base px-6 sm:px-8 py-3 group w-full sm:w-auto"
               data-testid="button-book-service"
             >
               Book Your Service
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 h-4 sm:h-5 w-4 sm:w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
 
             <Button 
               variant="outline"
               size="lg"
               onClick={handleViewPortfolio}
-              className="bg-white/10 text-white border-white/30 hover:bg-white/20 backdrop-blur-sm font-sans text-base px-8 py-3 group"
+              className="bg-white/10 text-white border-white/30 hover:bg-white/20 backdrop-blur-sm font-sans text-sm sm:text-base px-6 sm:px-8 py-3 group w-full sm:w-auto"
               data-testid="button-view-portfolio"
             >
-              <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+              <Play className="mr-2 h-4 sm:h-5 w-4 sm:w-5 group-hover:scale-110 transition-transform" />
               View Portfolio
             </Button>
           </motion.div>
 
           {/* Trust Indicators */}
           <motion.div 
-            className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 mt-16 text-white/80"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-12 mt-10 sm:mt-16 text-white/80 px-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             data-testid="trust-indicators"
           >
             <div className="text-center">
-              <div className="font-serif text-2xl lg:text-3xl font-light text-primary mb-1">500+</div>
-              <div className="font-sans text-sm uppercase tracking-wider">Weddings Captured</div>
+              <div className="font-serif text-xl sm:text-2xl lg:text-3xl font-light text-primary mb-1">500+</div>
+              <div className="font-sans text-xs sm:text-sm uppercase tracking-wider">Weddings Captured</div>
             </div>
             <div className="text-center">
-              <div className="font-serif text-2xl lg:text-3xl font-light text-primary mb-1">18+</div>
-              <div className="font-sans text-sm uppercase tracking-wider">Years Experience</div>
+              <div className="font-serif text-xl sm:text-2xl lg:text-3xl font-light text-primary mb-1">18+</div>
+              <div className="font-sans text-xs sm:text-sm uppercase tracking-wider">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="font-serif text-2xl lg:text-3xl font-light text-primary mb-1">50+</div>
-              <div className="font-sans text-sm uppercase tracking-wider">Award-Winning Photos</div>
+              <div className="font-serif text-xl sm:text-2xl lg:text-3xl font-light text-primary mb-1">50+</div>
+              <div className="font-sans text-xs sm:text-sm uppercase tracking-wider">Award-Winning Photos</div>
             </div>
           </motion.div>
         </motion.div>

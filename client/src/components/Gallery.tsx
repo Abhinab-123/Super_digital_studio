@@ -57,16 +57,16 @@ const Gallery = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16 px-4"
         >
           <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
             Our Portfolio
           </span>
-          <h2 className="font-serif text-4xl lg:text-5xl font-light text-foreground mb-6">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-foreground mb-4 sm:mb-6">
             Timeless
             <span className="text-primary block">Moments Captured</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Explore our collection of luxury weddings, editorial shoots, and intimate portraits 
             that showcase our commitment to artistic excellence.
           </p>
@@ -75,16 +75,16 @@ const Gallery = () => {
 
         {/* Gallery Grid */}
         {isLoading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
             {[...Array(8)].map((_, i) => (
               <div key={i} className="aspect-square bg-muted animate-pulse rounded-lg" />
             ))}
           </div>
         ) : isError ? (
-          <div className="text-center py-12">
-            <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-8 max-w-md mx-auto">
-              <h3 className="text-lg font-semibold text-destructive mb-2">Failed to Load Gallery</h3>
-              <p className="text-muted-foreground mb-4">
+          <div className="text-center py-12 px-4">
+            <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-6 sm:p-8 max-w-md mx-auto">
+              <h3 className="text-base sm:text-lg font-semibold text-destructive mb-2">Failed to Load Gallery</h3>
+              <p className="text-sm sm:text-base text-muted-foreground mb-4">
                 We couldn't fetch the images from Cloudinary. Please try again.
               </p>
               <Button 
@@ -99,7 +99,7 @@ const Gallery = () => {
           </div>
         ) : (
           <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6"
             layout
           >
             <AnimatePresence>

@@ -50,16 +50,16 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16 px-4"
         >
           <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
             Our Services
           </span>
-          <h2 className="font-serif text-4xl lg:text-5xl font-light text-foreground mb-6">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-foreground mb-4 sm:mb-6">
             Premium
             <span className="text-primary block">Wedding Services</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             From intimate ceremonies to grand celebrations, we offer comprehensive luxury services 
             that transform your vision into an extraordinary reality.
           </p>

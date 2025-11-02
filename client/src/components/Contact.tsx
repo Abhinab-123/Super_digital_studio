@@ -60,16 +60,16 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16 px-4"
         >
           <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
             Get In Touch
           </span>
-          <h2 className="font-serif text-4xl lg:text-5xl font-light text-card-foreground mb-6">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-card-foreground mb-4 sm:mb-6">
             Let's Create
             <span className="text-primary block">Something Beautiful</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Ready to transform your vision into reality? Reach out to us and let's discuss 
             how we can make your special day absolutely unforgettable.
           </p>
@@ -85,21 +85,21 @@ const Contact = () => {
             className="space-y-8"
           >
             {/* Primary WhatsApp CTA */}
-            <div className="bg-primary/5 border border-primary/20 rounded-lg p-8 text-center">
-              <MessageCircle className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="font-serif text-2xl font-light text-card-foreground mb-4">
+            <div className="bg-primary/5 border border-primary/20 rounded-lg p-6 sm:p-8 text-center">
+              <MessageCircle className="w-10 sm:w-12 h-10 sm:h-12 text-primary mx-auto mb-3 sm:mb-4" />
+              <h3 className="font-serif text-xl sm:text-2xl font-light text-card-foreground mb-3 sm:mb-4">
                 Book Your Service Instantly
               </h3>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
                 Get instant responses and personalized quotes through WhatsApp
               </p>
               <Button 
                 size="lg"
                 onClick={handleWhatsAppBooking}
-                className="bg-green-600 hover:bg-green-700 text-white font-sans"
+                className="bg-green-600 hover:bg-green-700 text-white font-sans w-full sm:w-auto"
                 data-testid="button-whatsapp-booking"
               >
-                <MessageCircle className="mr-2 h-5 w-5" />
+                <MessageCircle className="mr-2 h-4 sm:h-5 w-4 sm:w-5" />
                 Book via WhatsApp
               </Button>
             </div>

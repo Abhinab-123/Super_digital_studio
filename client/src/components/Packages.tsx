@@ -26,7 +26,7 @@ const Packages = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16 px-4"
         >
           <motion.div
             animate={{ 
@@ -38,18 +38,18 @@ const Packages = () => {
               ease: "easeInOut"
             }}
           >
-            <span className="inline-block px-6 py-3 bg-gradient-to-r from-primary to-primary/60 text-white rounded-full text-sm font-bold mb-4 shadow-lg shadow-primary/30">
-              <Sparkles className="inline-block w-4 h-4 mr-2" />
+            <span className="inline-block px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-primary to-primary/60 text-white rounded-full text-xs sm:text-sm font-bold mb-4 shadow-lg shadow-primary/30">
+              <Sparkles className="inline-block w-3 sm:w-4 h-3 sm:h-4 mr-2" />
               Our Packages
             </span>
           </motion.div>
-          <h2 className="font-serif text-4xl lg:text-6xl font-bold text-foreground mb-6 drop-shadow-sm">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 drop-shadow-sm">
             Photography
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary/80 to-primary block mt-2">
               Packages
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Choose the perfect package for your special day. Each package is carefully crafted to deliver exceptional value.
           </p>
         </motion.div>
